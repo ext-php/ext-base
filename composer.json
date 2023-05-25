@@ -1,0 +1,23 @@
+{
+    "name": "cphp/base",
+    "description": "MIT",
+    "authors": [
+        {
+            "name": "chenxiansen",
+            "email": "15951982354@163.com"
+        }
+    ],
+    "require-dev": {
+        "php": ">=7.2",
+        "phpunit/phpunit": "9.6.x-dev",
+        "smater/ext-container": "0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CPhp\\Base\\": "src/base",
+            "CPhp\\Tests\\": "tests/"
+        }
+    },
+
+    "require": {}
+}
