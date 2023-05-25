@@ -5,6 +5,7 @@
  * Date: 2023/5/25
  * Time: 16:21
  */
+namespace CPhp\Base;
 
 use \Smater\ExtContainer\Container;
 
@@ -30,7 +31,7 @@ class Application extends Container
         $this->basePath = rtrim($basePath,'\/');
 
         var_dump($this->basePath);exit;
-        
+
 
 
     }
