@@ -10,7 +10,7 @@
     "require-dev": {
         "php": ">=7.2",
         "phpunit/phpunit": "9.6.x-dev",
-        "smater/ext-container": "0.1"
+        "smater/ext-container": "0.2"
     },
     "autoload": {
         "psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd4f8f542e8134b32c3103987897b1a5",
+    "content-hash": "2f82fcddb7bb7067e61c1dc347c0f406",
     "packages": [],
     "packages-dev": [
         {
@@ -1690,16 +1690,16 @@
         },
         {
             "name": "smater/ext-container",
-            "version": "0.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ext-php/ext-container.git",
-                "reference": "e4a615e7a1e947961d989aef9ce134cca03a512b"
+                "reference": "12a6d7615063383bf5da45c7feb837a81f9d8264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ext-php/ext-container/zipball/e4a615e7a1e947961d989aef9ce134cca03a512b",
-                "reference": "e4a615e7a1e947961d989aef9ce134cca03a512b",
+                "url": "https://api.github.com/repos/ext-php/ext-container/zipball/12a6d7615063383bf5da45c7feb837a81f9d8264",
+                "reference": "12a6d7615063383bf5da45c7feb837a81f9d8264",
                 "shasum": ""
             },
             "require-dev": {
@@ -1722,9 +1722,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ext-php/ext-container/issues",
-                "source": "https://github.com/ext-php/ext-container/tree/0.1"
+                "source": "https://github.com/ext-php/ext-container/tree/0.2"
             },
-            "time": "2023-05-23T06:35:35+00:00"
+            "time": "2023-05-25T10:04:39+00:00"
         },
         {
             "name": "theseer/tokenizer",
