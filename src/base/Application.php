@@ -7,6 +7,9 @@
  */
 namespace CPhp\Base;
 
+use CPhp\Base\Filesystem\Filesystem;
+use CPhp\Base\Support\Env;
+use CPhp\Base\Support\Str;
 use \Smater\ExtContainer\Container;
 
 class Application extends Container
@@ -20,6 +23,9 @@ class Application extends Container
 
     protected $databasePath;
 
+    protected $absoluteCachePathPrefixes = ['/', '\\'];
+
+
     public function __construct($basePath = null)
     {
         if ($basePath) {
@@ -29,6 +35,22 @@ class Application extends Container
 
         //注册基础绑定
         $this->registerBaseBindings();
+        //注册基础服务提供器
+        $this->registerBaseServiceProviders();
+
+
+    }
+
+    //注册基础服务器
+    protected function registerBaseServiceProviders()
+    {
+        $this->register();
+
+    }
+
+    //注册
+    public function register($provider, $force = false)
+    {
 
 
     }
@@ -46,12 +68,40 @@ class Application extends Container
                 &object(Illuminate\Foundation\Application)[3]
          */
         $this->instance('app', $this);
+
         $this->instance(Container::class, $this);
 
+        //注册vendor下扩展
+        $this->singleton(PackageManifest::class, function () {
+            return new PackageManifest(new Filesystem, $this->basePath(), $this->getCachedPackagesPath());
+        });
 
 
+    }
+    //获取缓存包路径
+    protected function getCachedPackagesPath()
+    {
+        return $this->normalizeCachePath('APP_EVENTS_CACHE', 'cache/events.php');
+    }
 
+    protected function normalizeCachePath($key,$default)
+    {
+        if(is_null($env = Env::get($key)))
+        {
+            return $this->bootstrapPath($default);
+        }
 
+        return Str::startsWith($env, $this->absoluteCachePathPrefixes)
+            ? $env
+            : $this->basePath($env);
+
+    }
+
+    public function addAbsoluteCachePathPrefix($prefix)
+    {
+        $this->absoluteCachePathPrefixes[] = $prefix;
+
+        return $this;
     }
 
 
